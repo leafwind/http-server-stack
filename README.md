@@ -67,12 +67,20 @@ sudo cp twitch_analysis_uwsgi.conf /etc/init/twitch_analysis.conf
 sudo start twitch_analysis
 ```
 
-## Copy uWSGI Systemd Unit File (16.04)
+## Copy `twitch_analysis` uWSGI Systemd Unit File (16.04)
 
 ```
 sudo cp twitch_analysis_uwsgi.service /etc/systemd/system/twitch_analysis_uwsgi.service
-sudo systemctl start twitch_analysis
-sudo systemctl enable twitch_analysis
+sudo systemctl start twitch_analysis_uwsgi
+sudo systemctl enable twitch_analysis_uwsgi
+```
+
+### Copy `line_bot` uWSGI Systemd Unit File (16.04)
+
+```
+sudo cp line_bot_uwsgi.service /etc/systemd/system/line_bot_uwsgi.service
+sudo systemctl start line_bot_uwsgi
+sudo systemctl enable line_bot_uwsgi
 ```
 
 ## Log
