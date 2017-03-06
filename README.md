@@ -1,14 +1,16 @@
 # HTTP Server Stack (includes Nginx and uWSGI)
 
-This is a Flask application build by: [How To Serve Flask Applications with uWSGI and Nginx on Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-uwsgi-and-nginx-on-ubuntu-14-04)
+* Instructions:
+
+14.04:
+
+[How To Serve Flask Applications with uWSGI and Nginx on Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-uwsgi-and-nginx-on-ubuntu-14-04)
 
 16.04:
 
 [How To Serve Flask Applications with uWSGI and Nginx on Ubuntu 16.04](https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-uwsgi-and-nginx-on-ubuntu-16-04)
 
 # Package Requirements
-
-`sudo apt-get install g++`
 
 ```
 virtualenv __
@@ -20,7 +22,9 @@ pip install requirements.txt
 
 ## Copy Nginx Conf.
 
-`sudo cp ori_nginx.conf /etc/nginx/sites-available/ori`
+```
+sudo cp ori_nginx.conf /etc/nginx/sites-available/ori
+```
 
 ### Trouble shooting - HTTP 400
 
@@ -38,32 +42,44 @@ pip install requirements.txt
 
 ## Global conf.
 
-`/etc/nginx/nginx.conf`
+```
+/etc/nginx/nginx.conf
+```
 
 ## Log
 
-`/var/log/nginx/error.log`
+```
+/var/log/nginx/error.log
+```
 
 ## restart
-sudo service nginx restart
 
+```
+sudo service nginx restart
+```
 
 # uWSGI
 
 ## Copy uWSGI Upstart Script (14.04)
 
-`sudo cp twitch_analysis_uwsgi.conf /etc/init/twitch_analysis.conf`
-`sudo start twitch_analysis`
+```
+sudo cp twitch_analysis_uwsgi.conf /etc/init/twitch_analysis.conf
+sudo start twitch_analysis
+```
 
 ## Copy uWSGI Systemd Unit File (16.04)
 
-`sudo cp twitch_analysis.service /etc/systemd/system/twitch_analysis.service`
-`sudo systemctl start twitch_analysis`
-`sudo systemctl enable twitch_analysis`
+```
+sudo cp twitch_analysis.service /etc/systemd/system/twitch_analysis.service
+sudo systemctl start twitch_analysis
+sudo systemctl enable twitch_analysis
+```
 
 ## Log
 
-`/var/log/uwsgi/uwsgi.log`
+```
+/var/log/uwsgi/uwsgi.log
+```
 
 # ACME (Automatic Certificate Management Environment)
 
