@@ -70,7 +70,7 @@ sudo start twitch_analysis
 ## Copy uWSGI Systemd Unit File (16.04)
 
 ```
-sudo cp twitch_analysis.service /etc/systemd/system/twitch_analysis.service
+sudo cp twitch_analysis_uwsgi.service /etc/systemd/system/twitch_analysis_uwsgi.service
 sudo systemctl start twitch_analysis
 sudo systemctl enable twitch_analysis
 ```
