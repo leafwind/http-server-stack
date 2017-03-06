@@ -24,6 +24,7 @@ pip install requirements.txt
 
 ```
 sudo cp ori_nginx.conf /etc/nginx/sites-available/ori
+sudo ln -s /etc/nginx/sites-available/ori /etc/nginx/sites-enabled
 ```
 
 ### Trouble shooting - HTTP 400
